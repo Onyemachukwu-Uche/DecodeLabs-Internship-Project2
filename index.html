@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DecodeLabs Project 2: Fluid Architecture</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="logo">
+            <h2>Fluid<span>Core</span></h2>
+        </div>
+        
+        <button class="menu-toggle" popovertarget="mobile-nav" aria-label="Open menu">
+            <span class="hamburger-line"></span>
+        </button>
+
+        <nav class="desktop-navigation">
+            <ul>
+                <li><a href="#dashboard" class="active">Dashboard</a></li>
+                <li><a href="#analytics">Analytics</a></li>
+                <li><a href="#system">System Specs</a></li>
+                <li><a href="#settings">Settings</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div id="mobile-nav" popover>
+        <div class="popover-header">
+            <h3>Menu Navigation</h3>
+            <button class="close-toggle" popovertarget="mobile-nav" popovertargetaction="hide">×</button>
+        </div>
+        <nav class="mobile-navigation">
+            <ul>
+                <li><a href="#dashboard" popovertarget="mobile-nav" popovertargetaction="hide">Dashboard</a></li>
+                <li><a href="#analytics" popovertarget="mobile-nav" popovertargetaction="hide">Analytics</a></li>
+                <li><a href="#system" popovertarget="mobile-nav" popovertargetaction="hide">System Specs</a></li>
+                <li><a href="#settings" popovertarget="mobile-nav" popovertargetaction="hide">Settings</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main class="app-layout-grid">
+        
+        <aside class="sidebar-board">
+            <div class="user-profile-widget">
+                <div class="avatar-placeholder">UP</div>
+                <div class="profile-meta">
+                    <h4>Uchechukwu Prince</h4>
+                    <p>Developer Intern</p>
+                </div>
+            </div>
+            <div class="system-status-indicator">
+                <p>Environment Status: <span>Active</span></p>
+                <p>Fluid Modules: <span>Verified</span></p>
+            </div>
+        </aside>
+
+        <section class="content-stream">
+            
+            <header class="stream-intro">
+                <h1>System Overview</h1>
+                <p>Monitoring responsive data metrics across dynamic system components.</p>
+            </header>
+
+            <div class="stats-overview-row">
+                <div class="stat-mini-card">
+                    <span class="stat-label">Mobile Traffic Flow</span>
+                    <h2 class="stat-value">62.73%</h2>
+                </div>
+                <div class="stat-mini-card">
+                    <span class="stat-label">System Fluid Accuracy</span>
+                    <h2 class="stat-value">99.9%</h2>
+                </div>
+                <div class="stat-mini-card">
+                    <span class="stat-label">Active Matrix Nodes</span>
+                    <h2 class="stat-value">1,256</h2>
+                </div>
+            </div>
+
+            <div class="cards-flex-container">
+                
+                <article class="data-card">
+                    <div class="card-graphic engine-bg"></div>
+                    <div class="card-body">
+                        <h3>Fluid Sizing Engine</h3>
+                        <p>Utilizing dynamic scaling functions to establish balanced text proportions across varying screen viewports naturally.</p>
+                        <button class="action-target-btn">Launch Configuration</button>
+                    </div>
+                </article>
+
+                <article class="data-card">
+                    <div class="card-graphic matrix-bg"></div>
+                    <div class="card-body">
+                        <h3>Macro Grid Matrix</h3>
+                        <p>Constructing multi-dimensional grid templates that automatically realign structure layout nodes when breakpoints break.</p>
+                        <button class="action-target-btn">Analyze Matrix</button>
+                    </div>
+                </article>
+
+            </div>
+
+            <div class="extended-content-section">
+                <div class="section-title-wrapper">
+                    <h2>Advanced Analytics Stream</h2>
+                    <p>Continuous logs mapping responsive viewport breakthroughs and layout parameters.</p>
+                </div>
+
+                <div class="cards-flex-container vertical-stack">
+                    
+                    <article class="data-card horizontal-desktop">
+                        <div class="card-graphic performance-bg"></div>
+                        <div class="card-body">
+                            <h3>High-Resolution Asset Mapping</h3>
+                            <p>Optimizing layouts by mapping structural assets dynamically based on screen densities. Using optimized image compressions ensures fast load times across low-speed connections.</p>
+                            <button class="action-target-btn">Inspect Density</button>
+                        </div>
+                    </article>
+
+                    <article class="data-card horizontal-desktop">
+                        <div class="card-graphic response-bg"></div>
+                        <div class="card-body">
+                            <h3>Adaptive Content Thresholds</h3>
+                            <p>Letting layout systems expand organically based on content constraints instead of arbitrary target display hardware models. Breakpoints operate smoothly as bridges.</p>
+                            <button class="action-target-btn">View Thresholds</button>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <div class="data-table-wrapper">
+                <h3>System Deployment Status Log</h3>
+                <div class="table-scroll-container">
+                    <table class="responsive-data-table">
+                        <thead>
+                            <tr>
+                                <th>Module ID</th>
+                                <th>Layout Strategy</th>
+                                <th>Responsiveness Rating</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#DC-01</td>
+                                <td>Mobile Core Layout</td>
+                                <td>100% Fluid</td>
+                                <td><span class="status-tag active">Verified</span></td>
+                            </tr>
+                            <tr>
+                                <td>#DC-02</td>
+                                <td>Popover API Interface</td>
+                                <td>Zero JS Native</td>
+                                <td><span class="status-tag active">Verified</span></td>
+                            </tr>
+                            <tr>
+                                <td>#DC-03</td>
+                                <td>Fluid Typography Clamp</td>
+                                <td>Dynamic Scaled</td>
+                                <td><span class="status-tag active">Verified</span></td>
+                            </tr>
+                            <tr>
+                                <td>#DC-04</td>
+                                <td>Dual-Column Matrix Grid</td>
+                                <td>Breakpoint Bridged</td>
+                                <td><span class="status-tag pending">Reviewing</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+</html>

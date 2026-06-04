@@ -1,0 +1,484 @@
+/* ==================================================
+   1. RESET & SYSTEM VARIABLES 
+   ======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f1f5f9;
+    color: #1e293b;
+    line-height: 1.5;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    color: #0f172a;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    color: #1e293b;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 3.5vw, 1.5rem);
+    color: #1e293b;
+}
+
+/* ==================================================
+   2. MAIN HEADER & ACCESSIBLE TOUCH TARGETS
+   ======================= */
+.main-header {
+    height: 80px;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    border-bottom: 1px solid #e2e8f0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo h2 {
+    color: #1d3557;
+    font-size: 1.5rem;
+}
+
+.logo span {
+    color: #457b9d;
+}
+
+.menu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger-line {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background-color: #1e293b;
+    position: relative;
+}
+
+.hamburger-line::before,
+.hamburger-line::after {
+    content: '';
+    position: absolute;
+    width: 24px;
+    height: 3px;
+    background-color: #1e293b;
+    left: 0;
+}
+
+.hamburger-line::before { top: -8px; }
+.hamburger-line::after { top: 8px; }
+
+.desktop-navigation {
+    display: none;
+}
+
+/* ==================================================
+   3. NATIVE POPOVER MOBILE WINDOW SPECIFICATION
+   ======================= */
+#mobile-nav[popover] {
+    width: 85%;
+    max-width: 320px;
+    height: 100vh;
+    margin: 0 0 0 auto;
+    border: none;
+    background-color: #ffffff;
+    box-shadow: -10px 0 25px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+}
+
+#mobile-nav::backdrop {
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+}
+
+.popover-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.close-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #64748b;
+}
+
+.mobile-navigation ul {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobile-navigation ul li a {
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 12px 0;
+    display: block;
+    color: #475569;
+}
+
+/* ==============================
+   4. LAYOUT COMPONENTS 
+   ===================== */
+.app-layout-grid {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    gap: 24px;
+}
+
+.sidebar-board {
+    background-color: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.user-profile-widget {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.avatar-placeholder {
+    width: 48px;
+    height: 48px;
+    background-color: #e2e8f0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #475569;
+}
+
+.profile-meta h4 {
+    font-size: 1rem;
+    color: #0f172a;
+}
+
+.profile-meta p {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.system-status-indicator {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #f1f5f9;
+    font-size: 0.85rem;
+}
+
+.system-status-indicator p {
+    margin-bottom: 6px;
+}
+
+.system-status-indicator span {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.stream-intro {
+    margin-bottom: 8px;
+}
+
+.stream-intro p {
+    color: #64748b;
+    margin-top: 8px;
+}
+
+/* STATS ROW PANEL STYLING */
+.stats-overview-row {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-mini-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.stat-label {
+    font-size: 0.85rem;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    color: #1d3557;
+    margin-top: 4px;
+}
+
+/* Micro Layout Alignment: Flexbox Components */
+.cards-flex-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.data-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Local Image Card Banners using optimal .avif mapping */
+.card-graphic {
+    height: 180px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.engine-bg { 
+    background-image: url('assets/engine-display.avif'); 
+    background-color: #a8dadc;
+}
+
+.matrix-bg { 
+    background-image: url('assets/matrix-display.avif'); 
+    background-color: #457b9d;
+}
+
+.performance-bg {
+    background-image: url('assets/performance-metrics.avif');
+    background-color: #1d3557;
+}
+
+.response-bg {
+    background-image: url('assets/responsive-bridges.avif');
+    background-color: #e2e8f0;
+}
+
+.card-body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.card-body p {
+    color: #475569;
+    font-size: 0.95rem;
+}
+
+.action-target-btn {
+    min-height: 44px;
+    padding: 0 20px;
+    background-color: #1d3557;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    align-self: flex-start;
+    margin-top: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.action-target-btn:hover {
+    background-color: #457b9d;
+}
+
+/* EXTENDED DEEP CONTENT CONTAINER */
+.extended-content-section {
+    margin-top: 40px;
+}
+
+.section-title-wrapper {
+    margin-bottom: 24px;
+}
+
+.section-title-wrapper p {
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* DATA METRIC LOG TABLE */
+.data-table-wrapper {
+    margin-top: 40px;
+    background: #ffffff;
+    padding: 24px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.data-table-wrapper h3 {
+    margin-bottom: 16px;
+}
+
+.table-scroll-container {
+    overflow-x: auto; /* Ensures wide data tables don't break tiny screens */
+}
+
+.responsive-data-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: 0.95rem;
+}
+
+.responsive-data-table th, 
+.responsive-data-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.responsive-data-table th {
+    background-color: #f8fafc;
+    color: #475569;
+    font-weight: 600;
+}
+
+.status-tag {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.status-tag.active {
+    background-color: #d1fae5;
+    color: #065f46;
+}
+
+.status-tag.pending {
+    background-color: #fef3c7;
+    color: #92400e;
+}
+
+/* =================================
+   5. RESPONSIVE BRIDGES 
+   ========================= */
+@media (min-width: 768px) {
+    /* Scale stat blocks horizontally on tablet viewports */
+    .stats-overview-row {
+        flex-direction: row;
+    }
+    
+    .stat-mini-card {
+        flex: 1;
+    }
+}
+
+@media (min-width: 968px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .desktop-navigation {
+        display: block;
+    }
+
+    .desktop-navigation ul {
+        display: flex;
+        gap: 32px;
+    }
+
+    .desktop-navigation ul li a {
+        font-weight: 600;
+        color: #475569;
+        font-size: 0.95rem;
+        padding: 8px 0;
+        border-bottom: 2px solid transparent;
+        transition: color 0.2s, border-color 0.2s;
+    }
+
+    .desktop-navigation ul li a:hover,
+    .desktop-navigation ul li a.active {
+        color: #1d3557;
+        border-bottom-color: #1d3557;
+    }
+
+    /* Transform Layout into a Dual Column CSS Grid System Matrix */
+    .app-layout-grid {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 32px;
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 24px;
+    }
+
+    .sidebar-board {
+        align-self: start;
+        position: sticky;
+        top: 112px;
+    }
+
+    /* Transform main content component furniture side-by-side */
+    .cards-flex-container {
+        flex-direction: row;
+    }
+
+    .cards-flex-container .data-card {
+        flex: 1;
+    }
+
+    /* Turn lower content items into clean horizontal rows on large viewports */
+    .horizontal-desktop {
+        flex-direction: row;
+    }
+
+    .horizontal-desktop .card-graphic {
+        width: 300px;
+        height: 100%;
+        min-height: 200px;
+    }
+    
+    .horizontal-desktop .card-body {
+        flex: 1;
+    }
+}
