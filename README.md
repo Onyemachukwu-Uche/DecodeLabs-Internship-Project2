@@ -13,3 +13,5 @@ The goal here was clean code, fast performance, and a layout that stretches or s
 *   CSS Grid & Flexbox Teamwork:** I used CSS Grid to build the main blueprint of the page (the structural rows and columns) and Flexbox inside components (like navbars and cards) to keep individual items neatly aligned.
 *   Fluid Layouts with `clamp()`:** No more jerky jumps between screen breakpoints. By using relative units like `rem` and `vw`, along with the `clamp()` function, fonts and spacing scale completely smoothly.
 *   Zero JS Overlays (Popover API):** To keep the code lightweight and lightning-fast, I used the browser's native Popover API to handle interactive elements (like popups or toggles) instead of writing extra JavaScript.
+
+The code is live at : https://fluid-core-responsive-webpage.vercel.app/
